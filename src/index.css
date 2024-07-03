@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.cust-border {
+  border-image: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0.2) 90%,
+      transparent 80%
+    )
+    1;
+}
+.link_effect {
+  transition: all 0.1s ease-in-out;
+  cursor: default;
+}
+.link_effect:hover {
+  border-bottom: solid 1px #ffffff;
+}
+.screens {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  height: 100vh;
+}
+.scroll-snap {
+  scroll-snap-align: start;
+}
+.icon.vibrate {
+  animation: iconvibrate 0.2s ease-in;
+}
+@keyframes iconvibrate {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(3px);
+  }
+}
+.nav-item {
+  position: relative;
+}
+.nav-item::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  transition: all 0.1s ease-in;
+}
+.nav-item:hover::before {
+  background: rgba(0, 0, 0, 0);
+}
